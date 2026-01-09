@@ -14,7 +14,7 @@ resource "google_container_cluster" "this" {
   location = var.GOOGLE_REGION
 
   # Set initial node count (required, but will remove default pool)
-  initial_node_count       = 3
+  initial_node_count       = 2
   # Remove default node pool to use custom node pools instead
   remove_default_node_pool = true
 
@@ -77,7 +77,7 @@ data "google_container_cluster" "main" {
 }
 
 module "gke_cluster" {
-  source         = "github.com/<ВАШ-РЕПОЗИТОРІЙ>/tf-google-gke-cluster"
+  source         = "github.com/git-account/tf-google-gke-cluster"
   GOOGLE_REGION  = var.GOOGLE_REGION
   GOOGLE_PROJECT = var.GOOGLE_PROJECT
   GKE_NUM_NODES  = 2

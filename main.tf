@@ -76,9 +76,3 @@ data "google_container_cluster" "main" {
   location = var.GOOGLE_REGION
 }
 
-module "gke_cluster" {
-  source         = "github.com/git-account/tf-google-gke-cluster"
-  GOOGLE_REGION  = var.GOOGLE_REGION
-  GOOGLE_PROJECT = var.GOOGLE_PROJECT
-  GKE_NUM_NODES  = 2
-}

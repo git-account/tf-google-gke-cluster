@@ -32,3 +32,9 @@ variable "GKE_POOL_NAME" {
   default     = "main"
   description = "GKE pool name"
 }
+
+variable "deletion_protection" {
+  description = "Whether or not to allow Terraform to destroy the cluster."
+  type        = bool
+  default     = true # Keep it safe by default
+}

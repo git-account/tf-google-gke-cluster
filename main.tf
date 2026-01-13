@@ -13,6 +13,8 @@ resource "google_container_cluster" "this" {
   # Location (region) for the cluster
   location = var.GOOGLE_REGION
 
+  deletion_protection = var.deletion_protection
+  
   # Set initial node count (required, but will remove default pool)
   initial_node_count       = 2
   # Remove default node pool to use custom node pools instead
